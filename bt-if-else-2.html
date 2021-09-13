@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập cấu trúc điều kiện 2</title>
+</head>
+<body>
+<h2>Bài 1 : Chuyến đổi từ độ C sang độ F</h2><br>
+<b>Nhập độ C : </b>
+<input type="number" id="doC" oninput="tinhdoF()"><br><br>
+<b id="kq1"> </b>
+<br>
+<br>
+<h2>Bài 2 : Chuyến đổi từ mét sang feet</h2><br>
+<b>Nhập số mét : </b>
+<input type="number" id="soM" oninput="tinhsoM()"><br><br>
+<b id="kq2"> </b>
+<br>
+<br>br><h2>Bài 3 : Tính diện tích hình vuông khi biết cạnh a.</h2><br>
+<b>Nhập a : </b>
+<input type="number" id="a" oninput="dthv()"><br><br>
+<b id="kq3"> </b>
+<br>
+<br><br>br><h2>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h2><br>
+<b>Nhập a : </b>
+<input type="number" id="cd"><b>m</b><br>
+<b>Nhập b : </b>
+<input type="number" id="cr"> <b>m</b><br>
+<button onclick="dthcn()">Tính</button>
+<b id="kq4"> </b>
+<br>
+<br><br>
+<h2>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h2><br>
+<b>Nhập a : </b>
+<input type="number" id="canh1"><b>m</b><br>
+<b>Nhập b : </b>
+<input type="number" id="canh2"> <b>m</b><br>
+<button onclick="dttgv()">Tính</button>
+<b id="kq5"> </b>
+<br>
+<br>
+<h2>Bài 6 : Giải phương trình bậc 1 ax + b = 0</h2><br>
+<b>Nhập a : </b>
+<input type="number" id="a6">
+<b>Nhập b : </b>
+<input type="number" id="b6">
+<button onclick="ptbac1()">Giải</button>
+<br>
+<b id="kq6"></b>
+
+<script>
+    function tinhdoF() {
+        let doc = document.getElementById("doC").value;
+        let dof = (doc * 9 / 5) + 32
+        document.getElementById("kq1").innerHTML = "Chuyển sang độ F là : " + dof + " độ F."
+
+    }
+
+    function tinhsoM() {
+        let som = document.getElementById("soM").value;
+        let sofeet = som * 3.2808
+        document.getElementById('kq2').innerHTML = "Chuyển sang số feet là " + sofeet + " feet."
+
+
+    }
+
+    function dthv() {
+        let a = document.getElementById("a").value;
+        let dthv = a * a
+        document.getElementById('kq3').innerHTML = "Diện tích hình vuông là :" + dthv + "m<sup>2</sup>"
+    }
+
+    function dthcn() {
+        let cd = document.getElementById('cd').value;
+        let cr = document.getElementById('cr').value;
+        let dthcn = cd * cr
+        document.getElementById('kq4').innerHTML = "Diện tích hình chữ nhật là :" + dthcn + "m<sup>2</sup>"
+    }
+
+    function dttgv() {
+        let canh1 = document.getElementById('canh1').value;
+        let canh2 = document.getElementById('canh2').value;
+        let dttgv = (canh1 * canh2) / 2
+        document.getElementById('kq5').innerHTML = "Diện tích tam giác vuông là :" + dttgv + "m<sup>2</sup>"
+
+
+    }
+
+    function ptbac1() {
+        let a = document.getElementById('a6').value;
+        let b = document.getElementById('b6').value;
+        let x
+        if (a == 0) {
+            if (b == 0) {
+                document.getElementById('kq6').innerHTML = " Phương trình vô số nghiệm "
+            } else {
+                document.getElementById('kq6').innerHTML = " Phương trình vô nghiệm "
+            }
+        } else {
+            x = -b / a
+            document.getElementById('kq6').innerHTML = "x = " + x
+        }
+    }
+
+</script>
+</body>
+</html>
