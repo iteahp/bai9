@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bài tập cấu trúc điều kiện 1</title>
 </head>
 <body>
-$END$
+
+<h1>Bài 1 :</h1>
+<button onclick="bai1()">Ấn vào đây</button>
+<br>
+<br>
+<b id="kqbai1"></b>
+<h1>Bài 2 :</h1>
+<button onclick="bai2()">Ấn vào đây</button>
+<br>
+<br>
+<b id="kqbai2"></b>
+<h1>Bài 3 :</h1>
+<button onclick="bai3()">Ấn vào đây</button>
+<br>
+<br>
+<b id="kqbai3"></b>
+<h1>Bài 4 :</h1>
+<button onclick="bai4()">Ấn vào đây</button>
+<br>
+<br>
+<b id="so1"></b><br>
+<b id="so2"></b><br>
+<b id="so3"></b><br>
+
+<b id="kqbai4"></b><br>
+<br>
+
+<h1>Bài 5 :</h1>
+<button onclick="bai5()">Ấn vào đây</button>
+<br>
+<br>
+<b id="kqbai5"></b>
+<h1>Bài 6 :</h1>
+<button onclick="bai6()">Ấn vào đây</button>
+<br>
+<br>
+<b id="kqbai6"></b>
+
+
+<script>
+    function bai1() {
+        let a = parseInt(prompt("Nhập a : "))
+        let b = parseInt(prompt("Nhập b : "))
+        if (a % b == 0) document.getElementById('kqbai1').innerText = "a chia hết cho b"
+        else document.getElementById('kqbai1').innerText = "a không chia hết cho b"
+    }
+
+    function bai2() {
+        let tuoi = parseInt(prompt("Nhập số tuổi : "))
+        if (tuoi !== 16) document.getElementById('kqbai2').innerText = "Số tuổi không phù hợp vào lớp 10 "
+    }
+
+    function bai3() {
+        let a = parseInt(prompt("Nhập 1 số nguyên bất kỳ : "))
+        if (a > 0) document.getElementById('kqbai3').innerText = "Số nhập vào là số lớn hơn 0 "
+        else if (a < 0) document.getElementById('kqbai3').innerText = "Số nhập vào là số nhỏ hơn 0 "
+        else document.getElementById('kqbai3').innerText = "Số nhập vào là số  0 "
+
+    }
+
+    function bai4() {
+        let a = parseInt(prompt("Nhập số thứ nhất :"))
+        let b = parseInt(prompt("Nhập số thứ hai :"))
+        let c = parseInt(prompt("Nhập số thứ ba :"))
+        if (a > b && a > c) document.getElementById('kqbai4').innerText = "Số thứ nhất là lớn nhất  "
+        else if (b > c) document.getElementById('kqbai4').innerText = "Số thứ hai là số lớn nhất "
+        else document.getElementById('kqbai4').innerText = "Số thứ ba là lớn nhất  "
+        document.getElementById('so1').innerText = "Số thứ nhất là :  " + a
+        document.getElementById('so2').innerText = "Số thứ nhất là :  " + b
+        document.getElementById('so3').innerText = "Số thứ nhất là :  " + c
+
+
+    }
+    function bai5()
+</script>
 </body>
 </html>
