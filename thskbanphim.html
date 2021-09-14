@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành sự kiện bàn phím</title>
+</head>
+<body onload="dockey()">
+<img id="image" src="nobita.png" height="210" width="188" style="top: 0 ;left: 0 ; position: absolute;"/>
+<script>
+function up(){
+    let sk = document.getElementById('image')
+    sk.style.top = parseInt(sk.style.top) - 10 + 'px'
+}
+function down(){
+    let sk = document.getElementById('image')
+    sk.style.top = parseInt(sk.style.top) + 10 + 'px'
+}
+function left(){
+    let sk = document.getElementById('image')
+    sk.style.left = parseInt(sk.style.left) - 10 + 'px'
+}
+function right(){
+    let sk = document.getElementById('image')
+    sk.style.left= parseInt(sk.style.left) + 10 + 'px'
+}
+function move(evt){
+    switch (evt.keyCode){
+        case 37 :
+            left()
+            break;
+        case 38 :
+            up()
+            break;
+        case 39 :
+            right()
+            break;
+        case 40 :
+            down()
+            break;
+
+    }
+}
+function dockey(){
+    window.addEventListener('keydown',move)
+}
+</script>
+</body>
+</html>
