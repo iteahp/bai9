@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành sự kiện chuột</title>
+
+</head>
+<body>
+<img style="position: relative ; left: 0" id="ball" src="ball.jpg" height="200" width="200"/>
+<p>Ấn để di chuyển bóng sang phải</p>
+<input type="button" value="Ấn vào đây" onclick="moveright()" />
+<script>
+function moveright(){
+    let img = document.getElementById('ball')
+    img.style.left = parseInt(img.style.left) + 10 + 'px'
+}
+</script>
+</body>
+</html>
