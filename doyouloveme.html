@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Do you love me</title>
 </head>
 <body>
-$END$
+<h1 style="position:absolute; left:600px; top:200px;color: orange" > Đồng ý làm người yêu anh nhé ?</h1>
+<input type="button" value=" Có " onclick="dongy()" style="position:absolute; left:650px; top:300px;"/>
+<input type="button" value=" Không " id="No" onmouseover="tuchoi()" style="position:absolute; left:850px; top:300px;"/>
+</body>
+<script>
+    function dongy() {
+        alert("Anh cũng yêu em nhiều lắm ");
+    }
+
+    function tuchoi() {
+        var x = Math.random() * window.innerWidth;
+        var y = Math.random() * window.innerHeight;
+        document.getElementById('No').style.left = x + 'px';
+        document.getElementById('No').style.top = y + 'px';
+    }
+</script>
 </body>
 </html>
