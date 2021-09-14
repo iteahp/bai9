@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập Good Fast Cheap</title>
+</head>
+<body>
+Good:
+<input type="checkbox" id="good" oninput="check('fast')">
+<br>
+Fast:
+<input type="checkbox" id="fast" oninput="check('cheap')">
+<br>
+Cheap:
+<input type="checkbox" id="cheap" oninput="check('good')">
+
+<script>
+    function check(id){
+        a =document.getElementById('good').checked;
+        b=document.getElementById('fast').checked;
+        c =document.getElementById('cheap').checked;
+        if (a == b == c == true){
+            document.getElementById(id).checked=false
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

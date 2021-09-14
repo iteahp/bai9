@@ -5,23 +5,25 @@
     <title>Bài tập cấu trúc điều kiện 2</title>
 </head>
 <body>
-<h2>Bài 1 : Chuyến đổi từ độ C sang độ F</h2><br>
+<h2>Bài 1 : Chuyển đổi từ độ C sang độ F</h2><br>
 <b>Nhập độ C : </b>
 <input type="number" id="doC" oninput="tinhdoF()"><br><br>
 <b id="kq1"> </b>
 <br>
 <br>
-<h2>Bài 2 : Chuyến đổi từ mét sang feet</h2><br>
+<h2>Bài 2 : Chuyển đổi từ mét sang feet</h2><br>
 <b>Nhập số mét : </b>
 <input type="number" id="soM" oninput="tinhsoM()"><br><br>
 <b id="kq2"> </b>
 <br>
-<br>br><h2>Bài 3 : Tính diện tích hình vuông khi biết cạnh a.</h2><br>
+<br>
+<h2>Bài 3 : Tính diện tích hình vuông khi biết cạnh a.</h2><br>
 <b>Nhập a : </b>
 <input type="number" id="a" oninput="dthv()"><br><br>
 <b id="kq3"> </b>
 <br>
-<br><br>br><h2>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h2><br>
+<br><br>
+<h2>Bài 4: Tính diện tích hình chữ nhật khi biết 2 cạnh a, b.</h2><br>
 <b>Nhập a : </b>
 <input type="number" id="cd"><b>m</b><br>
 <b>Nhập b : </b>
@@ -30,7 +32,7 @@
 <b id="kq4"> </b>
 <br>
 <br><br>
-<h2>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h2><br>
+<h2>Bài 5: Tính diện tích tam giác vuông khi biết 2 cạnh kề a, b.</h2><br>
 <b>Nhập a : </b>
 <input type="number" id="canh1"><b>m</b><br>
 <b>Nhập b : </b>
@@ -47,6 +49,40 @@
 <button onclick="ptbac1()">Giải</button>
 <br>
 <b id="kq6"></b>
+<br>
+<br>
+<h2>Bài 7 : Giải phương trình bậc 2 a<sup>2</sup>x + bx + c = 0</h2><br>
+<b>Nhập a : </b>
+<input type="number" id="a7">
+<b>Nhập b : </b>
+<input type="number" id="b7">
+<b>Nhập c : </b>
+<input type="number" id="c7">
+<button onclick="ptbac2()">Giải</button>
+
+<b id="kq7"></b>
+<br>
+<br>
+<h2>Bài 8 : Kiểm tra số nhập vào có phải tuổi 1 người không ? </h2><br>
+<b>Nhập số tuổi </b>
+<input type="number" id="tuoi">
+<button onclick="kttuoi()">Kiểm tra</button>
+<b id="kq8"></b>
+<h2>Bài 9 : Kiểm tra 3 số nhập vào có phải là 1 tam giác hay không ?</h2>
+<b>Nhập a : </b>
+<input type="number" id="a9">
+<b>Nhập b : </b>
+<input type="number" id="b9">
+<b>Nhập c : </b>
+<input type="number" id="c9">
+<button onclick="kttg()">Kiểm tra</button>
+<b id="kq9"></b>
+<br>
+<h2>Bài 10: Viết chương trình tính giá điện sinh hoạt.</h2><br>
+<b>Nhập số điện : </b>
+<input type="number" id="sodien" oninput="b10()"> KWh
+<b id="kq10"></b>
+
 
 <script>
     function tinhdoF() {
@@ -102,6 +138,69 @@
         }
     }
 
+    function ptbac2() {
+        let a = document.getElementById('a7').value;
+        let b = document.getElementById('b7').value;
+        let c = document.getElementById('c7').value;
+        let x1, x2
+        let delta = b * b - 4 * a * c
+        if (delta < 0) {
+            document.getElementById('kq7').innerHTML = " Phương trình vô nghiệm "
+        } else {
+            if (delta == 0) {
+                document.getElementById('kq7').innerHTML = " Phương trình có nghiệm kép x <sub>1</sub> = x <sub>2</sub> = " + (-b / (2 * a))
+            } else {
+                document.getElementById('kq7').innerHTML = " x <sub>1</sub> = " + (-b + Math.sqrt(delta)) / (2 * a) + " x <sub>2</sub> = " + (-b - Math.sqrt(delta)) / (2 * a)
+            }
+        }
+    }
+
+    function kttuoi() {
+        tuoi = document.getElementById("tuoi").value;
+        if (tuoi % 1 == 0) {
+            if (tuoi < 120 && tuoi > 0) {
+                document.getElementById('kq8').innerText = tuoi + " là tuổi của 1 người "
+            } else {
+                document.getElementById('kq8').innerText = tuoi + " không phải tuổi của 1 người "
+
+            }
+        } else {
+            document.getElementById('kq8').innerText = tuoi + " không phải số nguyên "
+        }
+    }
+
+    function kttg() {
+        let a = document.getElementById('a9').value;
+        let b = document.getElementById('b9').value;
+        let c = document.getElementById('c9').value;
+        if (a > 0 && b > 0 && c > 0) {
+            if (((a + b) > c) || ((b + c) > a) || ((a + c) > b))
+                document.getElementById('kq9').innerHTML = "Đây là một tam giác "
+        } else document.getElementById('kq9').innerHTML = "Đây không phải một tam giác "
+
+    }
+
+    function b10() {
+        let sodien = document.getElementById('sodien').value;
+        let tien
+        if (sodien > 401) {
+            tien = sodien * 2927
+        } else if (sodien > 301) {
+            tien = sodien * 2834
+        } else if (sodien > 201) {
+            tien = sodien * 2536
+        } else if (sodien > 101) {
+            tien = sodien * 2014
+        } else if (sodien > 51) {
+            tien = sodien * 1734
+        } else if (sodien > 0) {
+            tien = sodien * 1678
+        } else {
+            document.getElementById('kq10').innerText = "Nhập số điện cho đúng đi nào"
+        }
+
+    document.getElementById('kq10').innerHTML = "Thành tiền : " + tien + " VNĐ "
+    }
 </script>
 </body>
 </html>
