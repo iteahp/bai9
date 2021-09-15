@@ -6,23 +6,38 @@
 </head>
 <body>
 Good:
-<input type="checkbox" id="good" oninput="check('fast')">
+<input type="checkbox" id="good" onchange="checkgood()">
 <br>
 Fast:
-<input type="checkbox" id="fast" oninput="check('cheap')">
+<input type="checkbox" id="fast" onchange="checkfast()">
 <br>
 Cheap:
-<input type="checkbox" id="cheap" oninput="check('good')">
+<input type="checkbox" id="cheap" onchange="checkcheap()">
 
 <script>
-    function check(id){
-        a =document.getElementById('good').checked;
-        b=document.getElementById('fast').checked;
-        c =document.getElementById('cheap').checked;
-        if (a == b == c == true){
-            document.getElementById(id).checked=false
+
+    function checkgood(){
+        let  fast=document.getElementById('fast').checked;
+        let  cheap =document.getElementById('cheap').checked;
+        if (fast && cheap ){
+            document.getElementById('cheap').checked =false
         }
     }
+    function checkfast() {
+        let  good =document.getElementById('good').checked
+        let  cheap =document.getElementById('cheap').checked;
+        if (good && cheap){
+            document.getElementById('good').checked =false
+        }
+    }
+    function checkcheap(){
+        let good =document.getElementById('good').checked;
+        let  fast=document.getElementById('fast').checked;
+        if (good && fast){
+            document.getElementById('fast').checked = false
+        }
+    }
+
 
 
 </script>
